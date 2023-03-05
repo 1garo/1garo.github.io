@@ -16,7 +16,7 @@ canonifyURLs = false
     tabWidth = 2
 
 [permalinks]
-    post = '/blog/:title/'
+  post = '/blog/:title/'
 
 [author]
 name = '1garo'
@@ -32,5 +32,3 @@ lazyImage = true
 [[params.socials]]
 name = 'github'
 link = 'https://github.com/1garo'
-
-
