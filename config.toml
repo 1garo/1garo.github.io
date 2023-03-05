@@ -15,7 +15,6 @@ canonifyURLs = false
     style = 'tango'
     tabWidth = 2
 
-
 [permalinks]
     post = '/blog/:title/'
 
