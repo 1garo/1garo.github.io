@@ -16,7 +16,7 @@ canonifyURLs = false
     tabWidth = 2
 
 [permalinks]
-  post = '/blog/:title/'
+  post = '/:title/'
 
 [author]
 name = '1garo'
