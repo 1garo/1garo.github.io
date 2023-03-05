@@ -5,6 +5,7 @@ theme = 'yinyang'
 enableRobotsTXT = true
 canonifyURLs = false
 
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
