@@ -1,4 +1,4 @@
-baseURL = 'https://1garo.github.io/'
+baseURL = 'https://1garo.github.io'
 languageCode = 'en-us'
 title = '1garo'
 theme = 'yinyang'
@@ -17,7 +17,7 @@ canonifyURLs = false
     tabWidth = 2
 
 [permalinks]
-  post = '/:title/'
+  post = 'blog/:title/'
 
 [author]
 name = '1garo'
