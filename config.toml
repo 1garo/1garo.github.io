@@ -1,4 +1,4 @@
-baseURL = 'https://blog.1garo.io/'
+baseURL = 'https://1garo.github.io/'
 languageCode = 'en-us'
 title = '1garo'
 theme = 'yinyang'
