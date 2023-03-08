@@ -124,9 +124,9 @@ const user = (() => {
 export default user;
 ```
 
-We did it! Now you have type safe and inference in you input.
+We did it! Now you input is type safe and have inference.
 
 I just showed a tiny bit about what `zod` can do, you can check it out more
 <a href="https://github.com/colinhacks/zod#basic-usage" target="_blank">here</a>,
-my favorite ones are: `.refine()`, `.transform()`, and `.partial()`, see u on the next episode.
+my favorite functionalities are: `.refine()`, `.transform()`, and `.partial()`, see u on the next episode.
 
