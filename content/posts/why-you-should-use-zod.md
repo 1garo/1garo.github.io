@@ -1,5 +1,5 @@
 ---
-title: "why you should use zod as your validator"
+title: "Why you should use zod as your validator"
 date: 2023-03-07T16:00:00-03:00
 draft: false
 categories: ['Tech']
@@ -8,67 +8,48 @@ The title is just to bring some attention... I know, you use what you want,
 but today I'll be giving some insights on zod, from someone that is using it daily for the last 6-8 months.
 
 To keep it simple, I'm gonna omit most of the `express`
-app setup because it's kinda easy, however you can find it in their [documentation](https://github.com/expressjs/express).
+app setup because it's kinda easy to do, however you can find it in their [documentation](https://github.com/expressjs/express).
 
-We can begin by installing the packages that we're gonna use.
+## Installation
 ```bash
-$ npm install zod express
+$ npm i zod express typescript body-parser
+$ npm i -g npx
+$ npx tsc --init
+$ npm i --save-dev @types/express
 ```
 
-Let's say that you have an `express` api with an `/user` endpoint.
+Let's say that you have an `express` api with a `/user` endpoint.
 
 ```ts
-// src/routes.ts
+// src/index.ts
+import express, { Express } from 'express';
+import bodyParser from 'body-parser';
 
-import { Router } from 'express';
-import user from '@/controller/user.controller';
+import User from './controller/user.controller';
 
-const router = Router();
+const app: Express = express();
 
-router.post('/user', user.create);
+// parse application/json
+app.use(bodyParser.json())
+
+app.post('/user', User.create);
+
+app.listen(3000, () => {
+  console.log(`⚡️[server]: Server is running at http://localhost:${3000}`);
+});
 ```
 
-You usually would do something like the example below, but as we can see,
-we lack typing inference, type validation, and a lot of other things.
+You usually would do something like: 
 
 ```ts
-// src/controller/user.controller
+// controller/user.controller.ts
+import { Request, Response } from 'express';
 
-const user = (() => {
+const User = (() => {
     const create = async (req: Request, res: Response) => {
-        const {
-            name,
-            age,
-        } = req.body;
+        const { name, age } = req.body;
 
-        // call a service or whatever you want to do
-
-        return res.send({ age })
-    }
-
-    return {
-        create,
-    }
-}
-
-export default user;
-```
-
-Also you could say, "_1garo_ you are wrong, I know better!!!". And send me the example below:
-
-```ts
-// src/controller/user.controller
-
-import { CreateUser } from '@/types/user.typings'
-
-const user = (() => {
-    const create = async (req: Request, res: Response) => {
-        const {
-            name,
-            age,
-        } = req.body as CreateUser;
-
-        // call a service or whatever you want to do
+        // ...
 
         return res.send({ name, age })
     }
@@ -76,30 +57,52 @@ const user = (() => {
     return {
         create,
     }
-}
+})();
 
-export default user;
+
+export default User;
+```
+But as we can see,
+we lack typing inference, type validation, and a lot of other things.
+
+Also you could say something like:
+> _1garo_, you are wrong, I know better!. 
+
+```ts
+// controller/user.controller.ts
+
+import { CreateUser } from '@/types/user.typings
+
+/// ...
+const { name, age } = req.body as CreateUser;
 ```
 
-Well, you are right! Kinda... I just don't wanna be there when your **user** sends the wrong format (and he WILL! I ensure you of that).
+Well, you are right! Kinda... 
 
-Let me show you the `zod` way!
+I just don't wanna be there when the **user** sends something wrong (and he WILL! I ensure you of that).
+
+## Let me show you the `zod` way!
 
 One of the things that I really like about `zod` is this "composition" approach. It
 makes me feel that I'm writing in a functional language and it's very easy to use,
 so let's solve the problem that we had discussed.
 
-We have to describe our **type/schema/whateverYouWantToCall**.
+We have to describe our schema, the one to be validated.
 
 ```ts
 // src/validation/user.validation.ts
+import z from 'zod';
 
 export const userValidation = z.object({
-  name:
+  name: 
   z.string()
-  .min(1, { message: "Must be 1 or more characters long" })
-  .trim(),
-  age: z.number().gte(13).int().positive().,
+    .min(1, { message: "Must be 1 or more characters long" })
+    .trim(),
+  age: 
+  z.number()
+    .gte(18)
+    .int()
+    .positive()
 });
 
 ```
@@ -107,30 +110,8 @@ export const userValidation = z.object({
 Now back to the last example and let's use our new validator.
 
 ```ts
-// src/controller/user.controller
-
-import {
-    userValidation,
-} from '@/validations/user.validation';
-
-const user = (() => {
-    const create = async (req: Request, res: Response) => {
-        const {
-            name,
-            age,
-        } = await userValidation.parse(req.body);
-
-        // call a service or whatever you want to do
-
-        return res.send({ name, age })
-    }
-
-    return {
-        create,
-    }
-}
-
-export default user;
+- const { name, age } = req.body as CreateUser;
++ const { name, age } = await userValidation.parse(req.body);
 ```
 
 Yeahhhh, We did it! Now your input is type safe and has inference.
