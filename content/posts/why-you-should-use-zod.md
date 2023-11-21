@@ -39,7 +39,7 @@ app.listen(3000, () => {
 });
 ```
 
-You usually would do something like: 
+You usually would do something like:
 
 ```ts
 // controller/user.controller.ts
@@ -66,7 +66,7 @@ But as we can see,
 we lack typing inference, type validation, and a lot of other things.
 
 Also you could say something like:
-> _1garo_, you are wrong, I know better!. 
+> _1garo_, you are wrong, I know better!.
 
 ```ts
 // controller/user.controller.ts
@@ -77,7 +77,7 @@ import { CreateUser } from '@/types/user.typings
 const { name, age } = req.body as CreateUser;
 ```
 
-Well, you are right! Kinda... 
+Well, you are right! Kinda...
 
 I just don't wanna be there when the **user** sends something wrong (and he WILL! I ensure you of that).
 
@@ -94,11 +94,11 @@ We have to describe our schema, the one to be validated.
 import z from 'zod';
 
 export const userValidation = z.object({
-  name: 
+  name:
   z.string()
     .min(1, { message: "Must be 1 or more characters long" })
     .trim(),
-  age: 
+  age:
   z.number()
     .gte(18)
     .int()
