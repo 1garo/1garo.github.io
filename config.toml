@@ -38,6 +38,8 @@ headTitle = "1garo's blog"
 mainSections = ['posts']
 twitterCards = true
 lazyImage = true
+favicon = './logo.png'
+postFooterContent = '[1garo]'
 
 [[params.socials]]
 name = 'github'
