@@ -1,7 +1,7 @@
 ---
-title: "why tests matter?"
+title: "Why tests matter?"
 date: 2023-11-21T14:40:19.776
-draft: true
+draft: false
 categories: ['Tech']
 ---
 

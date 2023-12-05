@@ -1,15 +1,19 @@
 ---
-title: "Why you should use zod as your validator"
+title: "Why you should use zod as your validator?"
 date: 2023-03-07T16:00:00-03:00
 draft: false
 categories: ['Tech']
 ---
+
+# Why you should use zod as your validator?
+
 The title is just to bring some attention... I know, you use what you want,
 but today I'll be giving some insights on zod, from someone that is using it daily for the last 6-8 months.
 
 To keep it simple, I'm gonna omit most of the `express`
 app setup because it's kinda easy to do, however you can find it in their [documentation](https://github.com/expressjs/express).
 
+------------------------------------
 ## Installation
 ```bash
 $ npm i zod express typescript body-parser
@@ -65,6 +69,8 @@ export default User;
 But as we can see,
 we lack typing inference, type validation, and a lot of other things.
 
+------------------------------------
+
 Also you could say something like:
 > _1garo_, you are wrong, I know better!.
 
@@ -116,6 +122,8 @@ Now back to the last example and let's use our new validator.
 
 Yeahhhh, We did it! Now your input is type safe and has inference.
 
+
+------------------------------------
 I just showed you a tiny bit about what `zod` can do, but you can check it out more
 <a href="https://github.com/colinhacks/zod#basic-usage" target="_blank">here</a>.
 
