@@ -2,14 +2,11 @@
 title: "Why tests matter?"
 date: 2023-11-21T14:40:19.776
 draft: false
-categories: ['Tech']
+summary: "Lately I have been studying cryptography and one of it's foundations are Caesar's cipher"
+toc: true 
+readTime: true
 ---
 
-# Why tests matter?
-
-Lately I have been studying cryptography and one of it's foundations are `Caesar's cipher`.
-
---------------------------------
 ## Introduction to Caesar's cipher
 The idea is that you have a `shift` from 0 to 25, who as the name suggest, shift each letter it's value,
 for example, a `shift` of 3 would output something like:

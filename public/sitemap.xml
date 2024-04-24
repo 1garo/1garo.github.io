@@ -2,21 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://1garo.github.io/</loc>
+    <loc>http://localhost:1313/posts/2024-happy-new-year/</loc>
+    <lastmod>2024-01-01T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-01-01T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-01-01T00:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/carrer/</loc>
+    <lastmod>2023-11-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/why-tests-matter/</loc>
+    <lastmod>2023-11-21T14:40:19+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2023-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/why-you-should-use-zod/</loc>
+    <lastmod>2023-03-07T16:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/whoami/</loc>
     <lastmod>2023-03-05T18:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://1garo.github.io/categories/</loc>
-    <lastmod>2023-03-05T18:00:00-03:00</lastmod>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://1garo.github.io/posts/</loc>
-    <lastmod>2023-03-05T18:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://1garo.github.io/categories/thoughts/</loc>
-    <lastmod>2023-03-05T18:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://1garo.github.io/posts/whoami/</loc>
-    <lastmod>2023-03-05T18:00:00-03:00</lastmod>
-  </url><url>
-    <loc>https://1garo.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

@@ -2,7 +2,8 @@
 title: "Why you should use zod as your validator?"
 date: 2023-03-07T16:00:00-03:00
 draft: false
-categories: ['Tech']
+toc: true 
+readTime: true
 ---
 
 # Why you should use zod as your validator?
@@ -22,6 +23,7 @@ $ npx tsc --init
 $ npm i --save-dev @types/express
 ```
 
+## Practical examples
 Let's say that you have an `express` api with a `/user` endpoint.
 
 ```ts
@@ -69,10 +71,10 @@ export default User;
 But as we can see,
 we lack typing inference, type validation, and a lot of other things.
 
-------------------------------------
 
 Also you could say something like:
-> _1garo_, you are wrong, I know better!.
+
+> **1garo, you are wrong, I know better!.**
 
 ```ts
 // controller/user.controller.ts

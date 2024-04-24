@@ -2,8 +2,10 @@
 title: "whoami"
 date: 2023-03-05T18:00:00-03:00
 draft: false
-categories: ['Thoughts']
+readTime: true
+autonumber: true
 ---
+
 One of my 2023 new year's wishes was to write a blog post each month, but as you can see it didn't happen.
 Sometimes we don't get what we want, right?! (**me convincing myself of that**).
 

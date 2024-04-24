@@ -1,22 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>1garo</title>
-    <link>https://1garo.github.io/</link>
-    <description>Recent content on 1garo</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Home on 1garo&#39;s blog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on 1garo&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Mar 2023 18:00:00 -0300</lastBuildDate><atom:link href="https://1garo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024: Happy new year</title>
+      <link>http://localhost:1313/posts/2024-happy-new-year/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/2024-happy-new-year/</guid>
+      <description>2024: Happy new year! Last year was weird, lot of great things happenned on my life, while in the end of October I was laid off.&#xA;But I don&amp;rsquo;t came here to talk about the past but the future. This year of 2024 I will with complete my personal goals and my carrer ones.&#xA;About my carrer, I want to write an interpreter, a compiler, get more into this world of distributed systems, and this year I want to understand what I really like in tech, at least for now.</description>
+    </item>
+    <item>
+      <title>Carrer</title>
+      <link>http://localhost:1313/carrer/</link>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/carrer/</guid>
+      <description>Education (Aug 2018 - Aug 2022)&#xA;Bachelor of Science - BS, Computer Science&#xA;USJT - Universidade São Judas Tadeu&#xA;Experience Backend Engineer @ Capitual - Brazil (July 2021 - Nov 2023)&#xA;As a Software Engineer, I spearheaded the development and management of a bespoke Backend-for-Frontend (BFF) microservice independently, aimed at enhancing user experiences and streamlining the process for mobile developers to access internal services seamlessly.&#xA;My current focus involves architecting a cutting-edge Banking as a Service (BaaS) platform, designed to empower businesses of all sizes to effortlessly integrate payment functionalities into their platforms, fostering convenience and scalability.</description>
+    </item>
+    <item>
+      <title>Why tests matter?</title>
+      <link>http://localhost:1313/posts/why-tests-matter/</link>
+      <pubDate>Tue, 21 Nov 2023 14:40:19 +0000</pubDate>
+      <guid>http://localhost:1313/posts/why-tests-matter/</guid>
+      <description>Lately I have been studying cryptography and one of it&amp;rsquo;s foundations are Caesar&amp;rsquo;s cipher</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>Welcome to my little world!</description>
+    </item>
+    <item>
+      <title>Why you should use zod as your validator?</title>
+      <link>http://localhost:1313/posts/why-you-should-use-zod/</link>
+      <pubDate>Tue, 07 Mar 2023 16:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/why-you-should-use-zod/</guid>
+      <description>Why you should use zod as your validator? The title is just to bring some attention&amp;hellip; I know, you use what you want, but today I&amp;rsquo;ll be giving some insights on zod, from someone that is using it daily for the last 6-8 months.&#xA;To keep it simple, I&amp;rsquo;m gonna omit most of the express app setup because it&amp;rsquo;s kinda easy to do, however you can find it in their documentation.</description>
+    </item>
     <item>
       <title>whoami</title>
-      <link>https://1garo.github.io/posts/whoami/</link>
+      <link>http://localhost:1313/posts/whoami/</link>
       <pubDate>Sun, 05 Mar 2023 18:00:00 -0300</pubDate>
-      
-      <guid>https://1garo.github.io/posts/whoami/</guid>
-      <description>One of my 2023 new year&amp;rsquo;s wish was to write a blog post for each month, as you can see it didn&amp;rsquo;t happended, sometimes we don&amp;rsquo;t get what we want, right?! (me convincing myself that).
-But back to the idea of the post, who am I?
-My name is Alexandre, online aka 1garo, and yes a developer, but we&amp;rsquo;ll talk about that on other posts, let&amp;rsquo;s get back to non-sense.</description>
+      <guid>http://localhost:1313/posts/whoami/</guid>
+      <description>One of my 2023 new year&amp;rsquo;s wishes was to write a blog post each month, but as you can see it didn&amp;rsquo;t happen. Sometimes we don&amp;rsquo;t get what we want, right?! (me convincing myself of that).&#xA;But back to the idea of the post, who am I?&#xA;My name is Alexandre, online aka 1garo. I love games, visiting coffee shops with my girlfriend, making coffee and exercising (sometimes)&amp;hellip;&#xA;I spend most of my free time playing on PC, probably something on Steam (I love counter-strike),</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,12 +1,8 @@
 baseURL = 'https://1garo.github.io/'
-title = "1garo"
+title = "1garo's blog"
 languageCode = "en-us"
-theme = "devise"
-relativeURLs = true
-enableEmoji = true
-googleAnalytics = ""
-enableRobotsTXT = true
-copyright = "&copy; 2023, Alexandre Vardai"
+theme = "typo"
+
 
 [markup]
   [markup.goldmark]
@@ -24,49 +20,53 @@ copyright = "&copy; 2023, Alexandre Vardai"
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'witchhazel'
+    style = 'algol'
     tabWidth = 2
-
-# Main menu items
-[menu]
-  [[menu.main]]
-    identifier = "Carrer"
-    name = "Carrer"
-    title = "Carrer"
-    url = "/carrer/"
-    weight = -110
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    title = "Posts"
-    url = "/posts/"
-    weight = -100
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    title = "Categories"
-    url = "/categories/"
-    weight = -90
 
 # Configuration Features
 [params]
-  description = "Your meta description"      # Your meta description of the site
-  header_title = "1garo's blog"                 # Your header title
-  header_subtitle = "Writing my thoughts out loud" # Your header subtitle
-  home_image = "/images/1548447057111.jpeg"          # Path to header image starting from the static directory (optional)
-  recent_posts = 5                           # Max amount of recent posts to show
-  mainSections = ["posts"]   # Main sections to include in recent posts
+theme = "light"
+# Math mode
+math = true
+
+# Intro on main page, content in markdown, if you omit title or content the other can be displayed
+homeIntro = true
+homeIntroTitle = 'Hi!'
+homeIntroContent = """
+Join me on this journey on how I think about software engineering (and other things). 
+"""
+
+# Collection to display on home page: 
+# in this case we would display content/posts pages
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Pagination size across all website, this is the same for homepage and single list page
+paginationSize = 100
   [params.style]                             # CSS style overrides
     backgroundColor = "#f8f9fa"
     homeImageBorderColor = "#ffffff"
     fontFamilyBase = "Jetbrains Mono"        # First-choice font
     fontColor = "#212529"
   [[params.social]]
-    fa_icon = "fab fa-github fa-1x"          # Font Awesome icon class
-    href = "http://github.com/1garo"      # Link to associate with icon (http://, https://, mailto:)
+    name = "github"          # Font Awesome icon class
+    url = "http://github.com/1garo"      # Link to associate with icon (http://, https://, mailto:)
   [[params.social]]
-    fa_icon = "fab fa-linkedin-in fa-1x"
-    href = "https://www.linkedin.com/in/alevardai"
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/alevardai"
   [[params.social]]
-    fa_icon = "fab fa-twitter fa-1x"
-    href = "https://twitter.com/1gar_o"
+    name = "twitter"
+    url = "https://twitter.com/1gar_o"
+
+# Main menu pages
+  [[params.menu]]
+  name = "home"
+  url = "/"
+
+  [[params.menu]]
+  name = "posts"
+  url = "/posts"
+
+  [[params.menu]]
+  name = "resume"
+  url = "/carrer"

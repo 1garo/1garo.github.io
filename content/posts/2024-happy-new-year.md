@@ -1,8 +1,7 @@
 ---
 title: "2024: Happy new year"
 date: 2024-01-01T00:00:00-03:00
-draft: false
-categories: ['Thoughts']
+draft: true
 ---
 # 2024: Happy new year!
 
