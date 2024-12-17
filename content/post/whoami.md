@@ -1,7 +1,7 @@
 ---
 title: "whoami"
 date: 2023-03-05T18:00:00-03:00
-draft: true
+draft: false
 readTime: true
 ---
 
