@@ -1,9 +1,8 @@
 ---
 title: "whoami"
 date: 2023-03-05T18:00:00-03:00
-draft: false
+draft: true
 readTime: true
-autonumber: true
 ---
 
 One of my 2023 new year's wishes was to write a blog post each month, but as you can see it didn't happen.
@@ -18,4 +17,3 @@ I spend most of my free time playing on PC, probably something on Steam (I love 
 Most of my recent experience is dealing with `node` and `typescript`, but latelly I have been m messing round with `rust`, `interpreters` and `compilers`.
 
 Now that you guys know who is behind the next wonderful texts, we can move on! Enjoy the ride!
-

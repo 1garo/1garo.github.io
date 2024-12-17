@@ -7,3 +7,9 @@
 [submodule "themes/typo"]
 	path = themes/typo
 	url = git@github.com:tomfran/typo.git
+[submodule "hugo-theme-console"]
+	path = hugo-theme-console
+	url = https://github.com/mrmierzejewski/hugo-theme-console.git
+[submodule "themes/hugo-theme-cleanwhite"]
+	path = themes/hugo-theme-cleanwhite
+	url = https://github.com/1garo/hugo-theme-cleanwhite.git

@@ -1,0 +1,76 @@
+baseURL = 'https://1garo.github.io/'
+title = "1garo's blog"
+languageCode = "en-us"
+#theme = "typo"
+theme = "hugo-theme-cleanwhite"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+[markup.highlight]
+anchorLineNos = false
+codeFences = true
+guessSyntax = false
+hl_Lines = ''
+hl_inline = false
+lineAnchors = ''
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = true
+noClasses = true
+noHl = false
+style = 'algol'
+tabWidth = 2
+
+# Configuration Features
+[params]
+theme = 'light'
+# Math mode
+math = true
+
+body_classes = "georgia bg-near-white"
+
+# Intro on main page, content in markdown, if you omit title or content the other can be displayed
+homeIntro = true
+homeIntroTitle = 'Hi!'
+homeIntroContent = """
+Join me on this journey on how I think about software engineering (and other things).
+"""
+
+
+# Collection to display on home page:
+# in this case we would display content/posts pages
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Pagination size across all website, this is the same for homepage and single list page
+paginationSize = 100
+[params.style] # CSS style overrides
+backgroundColor = "#f8f9fa"
+homeImageBorderColor = "#ffffff"
+#fontFamilyBase = "Jetbrains Mono" # First-choice font
+fontColor = "#212529"
+
+[[params.social]]
+name = "github"                 # Font Awesome icon class
+url = "http://github.com/1garo" # Link to associate with icon (http://, https://, mailto:)
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/alevardai"
+[[params.social]]
+name = "twitter"
+url = "https://twitter.com/1gar_o"
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "posts"
+url = "/posts"
+
+[[params.menu]]
+name = "resume"
+url = "/carrer"

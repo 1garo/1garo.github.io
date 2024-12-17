@@ -1,8 +1,7 @@
 ---
 title: "Why you should use zod as your validator?"
 date: 2023-03-07T16:00:00-03:00
-draft: false
-toc: true 
+draft: true
 readTime: true
 ---
 
@@ -133,4 +132,3 @@ My favorite functionalities are: `.refine()`, `.transform()`, and `.partial()`.
 Maybe I could write another post using those features, I think it could be fun!
 
 See u on the next episode.
-
