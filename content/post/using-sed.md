@@ -2,7 +2,7 @@
 title: "[25.2] Unix commands for the win!"
 date: 2025-02-01T00:00:00
 summary: "leverage unix command"
-draft: true
+draft: false
 toc: false
 readTime: false
 autoNumber: true
