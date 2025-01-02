@@ -1,6 +1,6 @@
 ---
 title: "[25.1] Happy New Year"
-date: 2025-01-01
+date: 2025-01-01T00:00:00
 summary: "Welcome 2025!"
 draft: false
 toc: false
