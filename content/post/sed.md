@@ -1,13 +1,13 @@
 ---
 title: "[25.2] Unix commands for the win!"
-date: 2025-02-01T00:00:00
-summary: "leverage unix command"
+date: 2025-01-02T00:00:00
+summary: "unix commands combine are the way to go"
 draft: false
 toc: false
 readTime: false
 autoNumber: true
 showTags: false
-tags: ["one-per-day", "unix"]
+tags: ["one-per-day"]
 ---
 
 Some weeks ago, I was doing some automation and the script output format was separeted by `,`:
