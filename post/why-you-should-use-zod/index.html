@@ -1,0 +1,77 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width"><link rel=icon type=image/ico href=https://1garo.github.io//favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://1garo.github.io//favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://1garo.github.io//favicon-32x32.png><link rel=icon type=image/png sizes=192x192 href=https://1garo.github.io//android-chrome-192x192.png><link rel=apple-touch-icon sizes=180x180 href=https://1garo.github.io//apple-touch-icon.png><meta name=description content><title>Why you should use zod as your validator? | 1garo's blog</title><link rel=canonical href=https://1garo.github.io/post/why-you-should-use-zod/><meta property="og:url" content="https://1garo.github.io/post/why-you-should-use-zod/"><meta property="og:site_name" content="1garo's blog"><meta property="og:title" content="Why you should use zod as your validator?"><meta property="og:description" content="zod to validate your schemas"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2023-03-07T16:00:00-03:00"><meta property="article:modified_time" content="2023-03-07T16:00:00-03:00"><link rel=stylesheet href=/assets/combined.min.3754dd52cfca457629cb7a992ab2e642318caccd6423e457dbf5be99d9192899.css media=all></head><body class=auto><div class=content><header><div class=header></div></header><main class=main><div class=breadcrumbs><a href=/>Home</a>
+<span class=breadcrumbs-separator>> </span><a href=/post/>Posts</a>
+<span class=breadcrumbs-separator>> </span><a class=breadcrumbs-current href=/post/why-you-should-use-zod/>Why you should use zod as your validator?</a></div><div><div class=single-intro-container><h1 class=single-title>Why you should use zod as your validator?</h1><p class=single-summary>zod to validate your schemas</p><p class=single-readtime><time datetime=2023-03-07T16:00:00-03:00>March 7, 2023</time>
+&nbsp; · &nbsp;
+3 min read</p></div><div class=single-content><h1 class=heading id=why-you-should-use-zod-as-your-validator>Why you should use zod as your validator?
+<a href=#why-you-should-use-zod-as-your-validator>#</a></h1><p>The title is just to bring some attention&mldr; I know, you use what you want,
+but today I&rsquo;ll be giving some insights on zod, from someone that is using it daily for the last 6-8 months.</p><p>To keep it simple, I&rsquo;m gonna omit most of the <code>express</code>
+app setup because it&rsquo;s kinda easy to do, however you can find it in their <a href=https://github.com/expressjs/express>documentation</a>.</p><hr><h2 class=heading id=installation>Installation
+<a href=#installation>#</a></h2><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>$ npm i zod express typescript body-parser
+</span></span><span style=display:flex><span>$ npm i -g npx
+</span></span><span style=display:flex><span>$ npx tsc --init
+</span></span><span style=display:flex><span>$ npm i --save-dev @types/express
+</span></span></code></pre></div><h2 class=heading id=practical-examples>Practical examples
+<a href=#practical-examples>#</a></h2><p>Let&rsquo;s say that you have an <code>express</code> api with a <code>/user</code> endpoint.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-ts data-lang=ts><span style=display:flex><span><span style=font-style:italic>// src/index.ts
+</span></span></span><span style=display:flex><span><span style=font-weight:700>import</span> express, { Express } <span style=font-weight:700>from</span> <span style=font-style:italic>&#39;express&#39;</span>;
+</span></span><span style=display:flex><span><span style=font-weight:700>import</span> bodyParser <span style=font-weight:700>from</span> <span style=font-style:italic>&#39;body-parser&#39;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-weight:700>import</span> User <span style=font-weight:700>from</span> <span style=font-style:italic>&#39;./controller/user.controller&#39;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-weight:700>const</span> app: <span>Express</span> = express();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-style:italic>// parse application/json
+</span></span></span><span style=display:flex><span>app.use(bodyParser.json())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>app.post(<span style=font-style:italic>&#39;/user&#39;</span>, User.create);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>app.listen(3000, () =&gt; {
+</span></span><span style=display:flex><span>  console.log(<span style=font-style:italic>`⚡️[server]: Server is running at http://localhost:</span><span style=font-weight:700;font-style:italic>${</span>3000<span style=font-weight:700;font-style:italic>}</span><span style=font-style:italic>`</span>);
+</span></span><span style=display:flex><span>});
+</span></span></code></pre></div><p>You usually would do something like:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-ts data-lang=ts><span style=display:flex><span><span style=font-style:italic>// controller/user.controller.ts
+</span></span></span><span style=display:flex><span><span style=font-weight:700>import</span> { Request, Response } <span style=font-weight:700>from</span> <span style=font-style:italic>&#39;express&#39;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-weight:700>const</span> User = (() =&gt; {
+</span></span><span style=display:flex><span>    <span style=font-weight:700>const</span> create = <span style=font-weight:700>async</span> (req: <span>Request</span>, res: <span>Response</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=font-weight:700>const</span> { name, age } = req.body;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=font-style:italic>// ...
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=font-weight:700>return</span> res.send({ name, age })
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=font-weight:700>return</span> {
+</span></span><span style=display:flex><span>        create,
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>})();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-weight:700>export</span> <span style=font-weight:700>default</span> User;
+</span></span></code></pre></div><p>But as we can see,
+we lack typing inference, type validation, and a lot of other things.</p><p>Also you could say something like:</p><blockquote><p><strong>1garo, you are wrong, I know better!.</strong></p></blockquote><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-ts data-lang=ts><span style=display:flex><span><span style=font-style:italic>// controller/user.controller.ts
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-weight:700>import</span> { CreateUser } <span style=font-weight:700>from</span> <span>&#39;@</span>/types/user.typings
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-style:italic>/// ...
+</span></span></span><span style=display:flex><span><span style=font-weight:700>const</span> { name, age } = req.body <span style=font-weight:700>as</span> CreateUser;
+</span></span></code></pre></div><p>Well, you are right! Kinda&mldr;</p><p>I just don&rsquo;t wanna be there when the <strong>user</strong> sends something wrong (and he WILL! I ensure you of that).</p><h2 class=heading id=let-me-show-you-the-zod-way>Let me show you the <code>zod</code> way!
+<a href=#let-me-show-you-the-zod-way>#</a></h2><p>One of the things that I really like about <code>zod</code> is this &ldquo;composition&rdquo; approach. It
+makes me feel that I&rsquo;m writing in a functional language and it&rsquo;s very easy to use,
+so let&rsquo;s solve the problem that we had discussed.</p><p>We have to describe our schema, the one to be validated.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-ts data-lang=ts><span style=display:flex><span><span style=font-style:italic>// src/validation/user.validation.ts
+</span></span></span><span style=display:flex><span><span style=font-weight:700>import</span> z <span style=font-weight:700>from</span> <span style=font-style:italic>&#39;zod&#39;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-weight:700>export</span> <span style=font-weight:700>const</span> userValidation = z.<span>object</span>({
+</span></span><span style=display:flex><span>  name:
+</span></span><span style=display:flex><span>  <span>z.string</span>()
+</span></span><span style=display:flex><span>    .min(1, { message: <span style=font-style:italic>&#34;Must be 1 or more characters long&#34;</span> })
+</span></span><span style=display:flex><span>    .trim(),
+</span></span><span style=display:flex><span>  age:
+</span></span><span style=display:flex><span>  <span>z.number</span>()
+</span></span><span style=display:flex><span>    .gte(18)
+</span></span><span style=display:flex><span>    .int()
+</span></span><span style=display:flex><span>    .positive()
+</span></span><span style=display:flex><span>});
+</span></span></code></pre></div><p>Now back to the last example and let&rsquo;s use our new validator.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-ts data-lang=ts><span style=display:flex><span>- <span style=font-weight:700>const</span> { name, age } = req.body <span style=font-weight:700>as</span> CreateUser;
+</span></span><span style=display:flex><span>+ <span style=font-weight:700>const</span> { name, age } = <span style=font-weight:700>await</span> userValidation.parse(req.body);
+</span></span></code></pre></div><p>Yeahhhh, We did it! Now your input is type safe and has inference.</p><hr><p>I just showed you a tiny bit about what <code>zod</code> can do, but you can check it out more
+here.</p><p>My favorite functionalities are: <code>.refine()</code>, <code>.transform()</code>, and <code>.partial()</code>.
+Maybe I could write another post using those features, I think it could be fun!</p><p>See u on the next episode.</p></div><div class=single-pagination><hr><div class=flex><div class=single-pagination-prev></div><div class=single-pagination-next><div class=single-pagination-container-next><div class=single-pagination-text><a href=/post/why-tests-matter/>Why tests matter?</a></div><div class=single-pagination-text>→</div></div></div></div><hr></div><div class=back-to-top><a href=#top>back to top</a></div></div></main></div><footer></footer><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js onload=renderMathInElement(document.body)></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script></body><script>function isAuto(){return document.body.classList.contains("auto")}function setTheme(){if(!isAuto())return;document.body.classList.remove("auto");let e="light";window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches&&(e="dark"),document.body.classList.add(e)}function invertBody(){document.body.classList.toggle("dark"),document.body.classList.toggle("light")}isAuto()&&window.matchMedia("(prefers-color-scheme: dark)").addListener(invertBody),setTheme()</script></html>
