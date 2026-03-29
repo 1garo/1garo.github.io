@@ -1,8 +1,9 @@
 ---
 title: "Why you should use zod as your validator?"
 date: 2023-03-07T16:00:00-03:00
-draft: true
+draft: false
 readTime: true
+summary: "zod to validate your schemas"
 ---
 
 # Why you should use zod as your validator?

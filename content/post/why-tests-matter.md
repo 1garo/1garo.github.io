@@ -1,7 +1,7 @@
 ---
 title: "Why tests matter?"
 date: 2023-11-21T14:40:19.776
-draft: true
+draft: false
 summary: "Lately I have been studying cryptography and one of it's foundations are Caesar's cipher"
 readTime: true
 ---
