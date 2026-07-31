@@ -1,5 +1,4 @@
 ---
-date: 2023-11-30
 title: "Carrer"
 ---
 
@@ -13,18 +12,16 @@ USJT - Universidade São Judas Tadeu
 
 
 ### Experience
-#### Backend Engineer @ Capitual - Brazil
-**(July 2021 - Nov 2023)**
+#### Site Reliability Engineer @ Guidewire Software · Full-time
+**(Jul 2024 - Present)**
 
-As a Software Engineer, I spearheaded the development and management of a bespoke __Backend-for-Frontend (BFF)__ microservice independently,
-aimed at enhancing user experiences and streamlining the process for mobile developers to access internal services seamlessly.
+São Paulo, Brazil · Remote
 
-My current focus involves architecting a cutting-edge __Banking as a Service (BaaS) platform__,
-designed to empower businesses of all sizes to effortlessly integrate payment functionalities into their platforms, fostering convenience and scalability.
+I am developing an internal operations tool to streamline and secure common cloud tasks such as provisioning, with the goal of simplifying workflows and supporting other teams.
 
-Leveraging a robust tech arsenal encompassing __OpenAPI, Swagger, Node.js, TypeScript, GraphQL, PostgreSQL, and GitHub Actions__, I orchestrate innovative solutions that drive efficiency and reliability in API development and deployment workflows.
+I also work with product teams to improve service reliability, observability, and deployment toil by enhancing pipelines and enabling faster, more reliable product delivery.
 
-Passionate about delivering tangible results, I constantly explore new ways to optimize processes and elevate user experiences through strategic technology implementations and agile methodologies.
+Tech Stack: __Go, Kubernetes, AWS, Datadog, TeamCity, GitHub Actions, Python, and Claude Code__
 
 #### Software Engineer @ Semantix Brasil - Brazil
 **(Dec 2020 - July 2021)**
